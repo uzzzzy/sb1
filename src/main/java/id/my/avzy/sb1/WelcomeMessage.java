@@ -1,4 +1,4 @@
-package foo.bar;
+package id.my.avzy.sb1;
 
 import org.springframework.stereotype.Component;
 
