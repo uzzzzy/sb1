@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/test")
@@ -27,7 +28,11 @@ public class TestController {
 
     @GetMapping("/runs/{id}")
     Run findById(@PathVariable Integer id) {
-        return testRepository.findById(id);
+        Optional<Run> run = testRepository.findById(id);
+        if (run.isEmpty()) {
+            throw new Error("Run not found");
+        }
+        return run.get();
     }
 
     @GetMapping("/")
