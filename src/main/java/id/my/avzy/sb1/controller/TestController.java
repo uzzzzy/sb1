@@ -12,7 +12,7 @@ public class TestController {
         ApiResponseData<String> apiResponseData = new ApiResponseData<>();
         apiResponseData.setStatus(200);
         apiResponseData.setMessage("Hello World");
-        apiResponseData.setData("Hello World");
+        apiResponseData.setData("Hello Sang");
         return ResponseEntity.ok(apiResponseData);
     }
 
